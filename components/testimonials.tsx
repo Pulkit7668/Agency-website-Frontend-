@@ -70,9 +70,6 @@ export function Testimonials() {
         <div className="relative group">
           {/* Testimonial Card */}
           <div className="glass rounded-xl p-8 sm:p-12 min-h-80 flex flex-col justify-center animate-scale-in hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 relative">
-            {/* Mouse Cursor Indicators */}
-            <div className="absolute top-6 right-6 w-5 h-5 border-2 border-cyan-400/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            <div className="absolute bottom-6 left-6 w-4 h-4 border-2 border-blue-400/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-150 pointer-events-none"></div>
             {/* Stars */}
             <div className="flex gap-1 mb-6">
               {[...Array(5)].map((_, i) => (

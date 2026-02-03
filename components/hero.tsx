@@ -33,20 +33,20 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance leading-tight animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight animate-slide-up" style={{ animationDelay: '0.2s' }}>
           Build Digital Solutions That Drive <span className="bg-linear-to-r from-blue-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Real Growth</span>
         </h1>
 
-        <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto text-balance animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <p className="text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-12 max-w-2xl mx-auto text-balance animate-slide-up px-2" style={{ animationDelay: '0.3s' }}>
           We craft premium web experiences and innovative digital solutions tailored to transform your business and accelerate your success.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <button onClick={handleStartProject} className="px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-400 text-black font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105 relative cursor-pointer">
-            <span className="relative z-10">Start Your Project</span>
-            <ArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 animate-slide-up px-2" style={{ animationDelay: '0.4s' }}>
+          <button onClick={handleStartProject} className="px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-blue-500 to-cyan-400 text-black font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105 relative cursor-pointer text-sm sm:text-base">
+            <span className="relative z-10">Start Project</span>
+            <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform sm:block hidden" />
           </button>
-          <button onClick={handleViewPortfolio} className="px-8 py-4 glass rounded-full text-foreground font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group relative cursor-pointer">
+          <button onClick={handleViewPortfolio} className="px-6 sm:px-8 py-3 sm:py-4 glass rounded-full text-foreground font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group relative cursor-pointer text-sm sm:text-base">
             <span className="relative">
               View Portfolio
             </span>
@@ -54,14 +54,14 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-12 mb-5">
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto mt-8 sm:mt-12 mb-5 px-2">
           {[
             { value: '150+', label: 'Projects Delivered', delay: '0.5s' },
             { value: '98%', label: 'Client Satisfaction', delay: '0.6s' },
             { value: '50+', label: 'Expert Team Members', delay: '0.7s' },
           ].map((stat) => (
             <div key={stat.label} className="animate-scale-in" style={{ animationDelay: stat.delay }}>
-              <div className="text-3xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text mb-2">
+              <div className="text-2xl sm:text-3xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text mb-1 sm:mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-foreground/60">
@@ -73,7 +73,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 right-24 animate-bounce">
+      <div className="absolute bottom-5 sm:bottom-10 right-6 sm:right-24 animate-bounce hidden sm:block">
         <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-2 bg-foreground/50 rounded-full animate-bounce"></div>
         </div>

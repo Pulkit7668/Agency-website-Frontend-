@@ -78,65 +78,65 @@ export function Careers() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-2">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-accent mb-4 animate-slide-down hover:scale-105 transition-transform">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block px-4 py-2 glass rounded-full text-xs sm:text-sm font-medium text-accent mb-4 animate-slide-down hover:scale-105 transition-transform">
             Join Our Team
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-balance animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 text-balance animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Exciting Opportunities to <span className="bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Grow Your Career</span>
           </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto text-balance animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto text-balance animate-slide-up px-2" style={{ animationDelay: '0.2s' }}>
             Join our talented team of developers, designers, and innovators. We're building the future of digital solutions.
           </p>
         </div>
 
         {/* Jobs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {jobs.map((job, index) => (
             <div
               key={job.id}
-              className="glass rounded-xl p-6 group hover:bg-white/15 transition-all duration-500 hover:shadow-lg animate-scale-in"
+              className="glass rounded-xl p-4 sm:p-6 group hover:bg-white/15 transition-all duration-500 hover:shadow-lg animate-scale-in"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               {/* Header */}
-              <div className="mb-4">
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-500">
+              <div className="mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-xl font-semibold text-foreground mb-1 sm:mb-2 group-hover:text-accent transition-colors duration-500">
                   {job.title}
                 </h3>
-                <div className="flex items-center gap-2 text-accent/80 text-sm">
-                  <Briefcase size={16} />
+                <div className="flex items-center gap-2 text-accent/80 text-xs sm:text-sm">
+                  <Briefcase size={14} className="sm:w-4" />
                   <span>{job.department}</span>
                 </div>
               </div>
 
               {/* Details */}
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                  <MapPin size={16} className="text-cyan-400" />
+              <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                <div className="flex items-center gap-2 text-foreground/70 text-xs sm:text-sm">
+                  <MapPin size={14} className="text-cyan-400 sm:w-4" />
                   <span>{job.location}</span>
                 </div>
-                <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                  <Clock size={16} className="text-cyan-400" />
+                <div className="flex items-center gap-2 text-foreground/70 text-xs sm:text-sm">
+                  <Clock size={14} className="text-cyan-400 sm:w-4" />
                   <span>{job.type}</span>
                 </div>
-                <div className="text-sm font-semibold text-blue-400">
+                <div className="text-xs sm:text-sm font-semibold text-blue-400">
                   {job.salaryRange}
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-foreground/70 text-sm mb-4 leading-relaxed">
+              <p className="text-foreground/70 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
                 {job.description}
               </p>
 
               {/* Skills */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
                 {job.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-xs bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300"
+                    className="px-2 sm:px-3 py-1 text-xs bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300"
                   >
                     {skill}
                   </span>
@@ -146,7 +146,7 @@ export function Careers() {
               {/* Apply Button */}
               <button
                 onClick={() => handleApplyJob(job.title)}
-                className="w-full px-4 py-3 bg-linear-to-r from-blue-500 to-cyan-400 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105 cursor-pointer"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-linear-to-r from-blue-500 to-cyan-400 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105 cursor-pointer text-sm sm:text-base"
               >
                 <span>Apply Now</span>
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />

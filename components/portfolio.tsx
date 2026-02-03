@@ -67,27 +67,27 @@ export function Portfolio() {
         <div className="absolute bottom-20 right-0 w-96 h-96 bg-cyan-600 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-2">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-accent mb-4 animate-slide-down hover:scale-105 transition-transform">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block px-4 py-2 glass rounded-full text-xs sm:text-sm font-medium text-accent mb-4 animate-slide-down hover:scale-105 transition-transform">
             Our Work
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-balance animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 text-balance animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Featured <span className="bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Projects</span>
           </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto text-balance animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto text-balance animate-slide-up px-2" style={{ animationDelay: '0.2s' }}>
             Showcase of successful projects that have driven real impact for our clients.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
               onClick={() => handleProjectClick(project.name)}
-              className="group relative glass rounded-xl overflow-hidden h-80 hover:bg-white/20 transition-all duration-300 hover:glow-primary cursor-pointer animate-scale-in hover:scale-105 hover:shadow-2xl"
+              className="group relative glass rounded-xl overflow-hidden h-64 sm:h-80 hover:bg-white/20 transition-all duration-300 hover:glow-primary cursor-pointer animate-scale-in hover:scale-105 hover:shadow-2xl"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Background Image */}
@@ -100,24 +100,24 @@ export function Portfolio() {
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/75 transition-all duration-300"></div>
 
               {/* Mouse Cursor Indicators */}
-              <div className="absolute top-4 right-4 w-5 h-5 border-2 border-white/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-              <div className="absolute bottom-4 left-4 w-4 h-4 border-2 border-accent/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-100 pointer-events-none"></div>
+              {/* <div className="absolute top-4 right-4 w-5 h-5 border-2 border-white/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div> */}
+              {/* <div className="absolute bottom-4 left-4 w-4 h-4 border-2 border-accent/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-100 pointer-events-none"></div> */}
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors transform group-hover:translate-y-0 translate-y-2 duration-300">
+              <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 text-white">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-accent transition-colors transform group-hover:translate-y-0 translate-y-2 duration-300">
                   {project.name}
                 </h3>
-                <p className="text-sm text-white/80 mb-4 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 line-clamp-2 group-hover:text-white transition-colors">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 bg-white/20 rounded-full text-white/90 group-hover:bg-white/30 transition-colors"
+                      className="text-xs px-2 sm:px-3 py-1 bg-white/20 rounded-full text-white/90 group-hover:bg-white/30 transition-colors"
                     >
                       {tag}
                     </span>
@@ -126,8 +126,8 @@ export function Portfolio() {
 
                 {/* View Button */}
                 <div className="flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
-                  <span className="text-sm font-semibold">View Project</span>
-                  <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <span className="text-xs sm:text-sm font-semibold">View</span>
+                  <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform sm:w-4" />
                 </div>
               </div>
             </div>
