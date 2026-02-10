@@ -50,6 +50,7 @@ function getVisibleServices(currentIndex: number) {
 
 export function Services() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   // Auto-scroll effect
   useEffect(() => {
@@ -60,6 +61,14 @@ export function Services() {
     }, 2000); // Auto-scroll every 2 seconds
 
     return () => clearInterval(interval);
+  }, []);
+
+  // Track window width on client to avoid accessing `window` during SSR
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const goToPrevious = () => {
@@ -105,15 +114,16 @@ export function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 min-h-96">
             {services.map((service, index) => {
               const Icon = service.icon;
-              const isVisible = index === currentIndex || 
-                               (index === (currentIndex + 1) % services.length && window.innerWidth >= 640) ||
-                               (index === (currentIndex + 2) % services.length && window.innerWidth >= 1024);
+              const isVisible =
+                index === currentIndex ||
+                (index === (currentIndex + 1) % services.length && windowWidth >= 640) ||
+                (index === (currentIndex + 2) % services.length && windowWidth >= 1024);
               
               return (
                 <div
                   key={index}
                   className={`glass rounded-xl p-6 sm:p-8 group hover:bg-white/15 transition-all duration-500 hover:shadow-lg animate-scale-in ${
-                    !isVisible ? 'hidden sm:hidden lg:hidden' : ''
+                    !isVisible ? 'hidden' : ''
                   }`}
                 >
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-linear-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 group-hover:rotate-6">
