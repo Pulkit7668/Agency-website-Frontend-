@@ -5,7 +5,8 @@ import { WhyChooseUs } from '@/components/why-choose-us';
 import { WorkProcess } from '@/components/work-process';
 import { Portfolio } from '@/components/portfolio';
 import { Testimonials } from '@/components/testimonials';
-import { Careers } from '@/components/careers';
+import { ClientVideos } from '@/components/client-videos';
+// import { Careers } from '@/components/careers';
 import { CTASection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 
@@ -18,8 +19,9 @@ export default function Home() {
       <WhyChooseUs />
       <WorkProcess />
       <Portfolio />
+      <ClientVideos />
       <Testimonials />
-      <Careers />
+      {/* <Careers /> */}
       <CTASection />
       <Footer />
     </main>

@@ -1,12 +1,14 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import {
   Globe,
   Smartphone,
-  Palette,
   Zap,
-  Search,
   Shield,
+  Film,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 const services = [
@@ -29,16 +31,10 @@ const services = [
       'Native and cross-platform mobile solutions that deliver exceptional user experiences.',
   },
   {
-    icon: Palette,
-    title: 'UI/UX Design',
+    icon: Film,
+    title: 'Video Editing',
     description:
-      'Stunning interfaces and seamless experiences that captivate users and drive engagement.',
-  },
-  {
-    icon: Search,
-    title: 'SEO & Digital Marketing',
-    description:
-      'Strategic marketing solutions to increase visibility and attract your ideal customers.',
+      'Professional video editing and production services to create compelling visual content for your brand.',
   },
   {
     icon: Shield,
@@ -48,7 +44,36 @@ const services = [
   },
 ];
 
+function getVisibleServices(currentIndex: number) {
+  return services.slice(currentIndex, currentIndex + 1);
+}
+
 export function Services() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === services.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Auto-scroll every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? services.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === services.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <section
       id="services"
@@ -74,32 +99,75 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={index}
-                className="glass rounded-xl p-8 group hover:bg-white/15 transition-all duration-500 hover:shadow-lg"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-linear-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 group-hover:rotate-6">
-                  <Icon size={20} className="text-black sm:w-6" />
+        {/* Services Carousel */}
+        <div className="relative">
+          {/* Services Grid Display */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 min-h-96">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              const isVisible = index === currentIndex || 
+                               (index === (currentIndex + 1) % services.length && window.innerWidth >= 640) ||
+                               (index === (currentIndex + 2) % services.length && window.innerWidth >= 1024);
+              
+              return (
+                <div
+                  key={index}
+                  className={`glass rounded-xl p-6 sm:p-8 group hover:bg-white/15 transition-all duration-500 hover:shadow-lg animate-scale-in ${
+                    !isVisible ? 'hidden sm:hidden lg:hidden' : ''
+                  }`}
+                >
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-linear-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 group-hover:rotate-6">
+                    <Icon size={20} className="text-black sm:w-6" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed group-hover:text-foreground/80 transition-colors duration-500">
+                    {service.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <span>Learn more</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-500">→</span>
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-500">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-foreground/70 leading-relaxed group-hover:text-foreground/80 transition-colors duration-500">
-                  {service.description}
-                </p>
-                <div className="mt-4 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                  <span>Learn more</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-500">→</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* Navigation Buttons - Bottom Centered */}
+          <div className="flex items-center justify-center gap-4 mt-8 sm:mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <button
+              onClick={goToPrevious}
+              className="p-2 glass rounded-full text-foreground hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              aria-label="Previous services"
+            >
+              <ChevronLeft size={24} className="hover:rotate-180 transition-transform duration-300" />
+            </button>
+
+            {/* Indicators */}
+            <div className="flex gap-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`rounded-full transition-all duration-300 hover:scale-125 ${
+                    index === currentIndex
+                      ? 'bg-accent w-8 h-2'
+                      : 'bg-foreground/30 w-2 h-2 hover:bg-foreground/50'
+                  }`}
+                  aria-label={`Go to service ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={goToNext}
+              className="p-2 glass rounded-full text-foreground hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              aria-label="Next services"
+            >
+              <ChevronRight size={24} className="hover:rotate-180 transition-transform duration-300" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
