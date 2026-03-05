@@ -4,22 +4,22 @@ import { ArrowRight, Mail, Phone } from 'lucide-react';
 
 export function CTASection() {
   const handleStartProject = () => {
-    const email = 'hello@techvision.com';
+    const email = 'pulkitpandit21@gmail.com';
     window.location.href = `mailto:${email}?subject=Project Inquiry - TechVision`;
   };
 
   const handleScheduleCall = () => {
-    const phone = '+1 (555) 123-4567';
+    const phone = '+91 8077989856';
     window.location.href = `tel:${phone}`;
   };
 
   const handleEmailClick = () => {
-    const email = 'hello@techvision.com';
+    const email = 'pulkitpandit21@gmail.com';
     window.location.href = `mailto:${email}`;
   };
 
   const handlePhoneClick = () => {
-    const phone = '+1 (555) 123-4567';
+    const phone = '+91 8077989856';
     window.location.href = `tel:${phone}`;
   };
 
@@ -60,7 +60,7 @@ export function CTASection() {
               </div>
               <div className="min-w-0">
                 <div className="text-xs sm:text-sm text-foreground/60">Email</div>
-                <div className="text-xs sm:text-sm text-foreground font-semibold hover:text-accent transition-colors truncate">hello@techvision.com</div>
+                <div className="text-xs sm:text-sm text-foreground font-semibold hover:text-accent transition-colors truncate">pulkitpandit21@gmail.com</div>
               </div>
             </button>
             <button onClick={handlePhoneClick} className="flex items-center sm:justify-center gap-3 sm:gap-4 animate-slide-in-right hover:scale-105 transition-transform duration-300 cursor-pointer text-left" style={{ animationDelay: '0.5s' }}>
@@ -69,7 +69,7 @@ export function CTASection() {
               </div>
               <div className="min-w-0">
                 <div className="text-xs sm:text-sm text-foreground/60">Phone</div>
-                <div className="text-xs sm:text-sm text-foreground font-semibold hover:text-accent transition-colors truncate">+1 (555) 123-4567</div>
+                <div className="text-xs sm:text-sm text-foreground font-semibold hover:text-accent transition-colors truncate">+91 8077989856</div>
               </div>
             </button>
           </div>
@@ -78,17 +78,17 @@ export function CTASection() {
         {/* Trust Badges */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-10 sm:mt-16 animate-slide-up px-2" style={{ animationDelay: '0.6s' }}>
           <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 group">
-            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text group-hover:scale-125 transition-transform">150+</span>
+            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">150+</span>
             <span className="text-xs sm:text-base text-foreground/70 group-hover:text-foreground transition-colors">Projects</span>
           </div>
           <div className="w-1 h-6 sm:h-8 bg-foreground/20"></div>
           <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 group">
-            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text group-hover:scale-125 transition-transform">98%</span>
+            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">98%</span>
             <span className="text-xs sm:text-base text-foreground/70 group-hover:text-foreground transition-colors">Satisfaction</span>
           </div>
           <div className="w-1 h-6 sm:h-8 bg-foreground/20"></div>
           <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 group">
-            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text group-hover:scale-125 transition-transform">24/7</span>
+            <span className="text-2xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text ">24/7</span>
             <span className="text-xs sm:text-base text-foreground/70 group-hover:text-foreground transition-colors">Support</span>
           </div>
         </div>

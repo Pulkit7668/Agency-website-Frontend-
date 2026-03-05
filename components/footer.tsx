@@ -41,7 +41,7 @@ export function Footer() {
     const links: Record<string, string> = {
       Facebook: 'https://facebook.com',
       Twitter: 'https://twitter.com',
-      LinkedIn: 'https://linkedin.com',
+      LinkedIn: 'https://www.linkedin.com/in/pulkit-gautam-ab81a8267',
       Instagram: 'https://instagram.com',
     };
     window.open(links[platform], '_blank');
@@ -55,7 +55,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10">
-        {/* Newsletter Section */}
+        {/* Newsletter Section
         <div className="border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <div className="glass rounded-xl p-4 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 animate-slide-up hover:shadow-2xl transition-all duration-300">
@@ -83,7 +83,7 @@ export function Footer() {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
