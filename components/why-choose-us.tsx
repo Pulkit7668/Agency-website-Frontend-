@@ -4,9 +4,9 @@ import { CheckCircle2 } from 'lucide-react';
 
 const reasons = [
   {
-    title: 'Expert Team',
+    title: 'Modern Technologies',
     description:
-      'Highly skilled professionals with years of experience across diverse industries and technologies.',
+      'We use the latest frameworks like React, Next.js and Tailwind CSS.',
   },
   {
     title: 'Client-Focused Approach',
@@ -43,7 +43,7 @@ export function WhyChooseUs() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-accent mb-4">
-            Why Partner With Us
+            Why Choose Our Agency
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-balance">
             Trusted by <span className="bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">Industry Leaders</span>

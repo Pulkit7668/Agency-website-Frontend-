@@ -57,22 +57,25 @@ s
           </span>
         </div>
 
-        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          Build Digital Solutions That Drive <span className="bg-linear-to-r from-blue-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Real Growth</span>
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6 text-balance leading-tight animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          {/* Build Digital Solutions That Drive <span className="bg-linear-to-r from-blue-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Real Growth</span> */}
+          Build Modern Websites & Web Applications for  <span className="bg-linear-to-r from-blue-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Your Business</span>
+
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-12 max-w-2xl mx-auto text-balance animate-slide-up px-2" style={{ animationDelay: '0.3s' }}>
-          We craft premium web experiences and innovative digital solutions tailored to transform your business and accelerate your success.
+          {/* We craft premium web experiences and innovative digital solutions tailored to transform your business and accelerate your success. */}
+          We help startups and businesses create fast, scalable and beautiful digital products using modern technologies like React and Next.js.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 animate-slide-up px-2" style={{ animationDelay: '0.4s' }}>
           <button onClick={handleStartProject} className="px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-blue-500 to-cyan-400 text-black font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105 relative cursor-pointer text-sm sm:text-base">
-            <span className="relative z-10">Start Project</span>
+            <span className="relative z-10">Start Your Project</span>
             <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform sm:block hidden" />
           </button>
           <button onClick={handleViewPortfolio} className="px-6 sm:px-8 py-3 sm:py-4 glass rounded-full text-foreground font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group relative cursor-pointer text-sm sm:text-base">
             <span className="relative">
-              View Portfolio
+              View Our Work
             </span>
           </button>
         </div>

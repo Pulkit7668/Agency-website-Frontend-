@@ -16,13 +16,13 @@ const services = [
     icon: Globe,
     title: 'Website Development',
     description:
-      'Custom, responsive websites built with cutting-edge technologies to showcase your brand.',
+      'We build fast, scalable and responsive websites using modern technologies to help businesses grow online.',
   },
   {
     icon: Zap,
-    title: 'Web Applications',
+    title: 'Frontend Development',
     description:
-      'Powerful, scalable web apps designed to streamline operations and boost productivity.',
+      'Beautiful and interactive user interfaces built with React, Tailwind CSS and modern frameworks.',
   },
   {
     icon: Smartphone,
@@ -98,7 +98,7 @@ export function Services() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <span className="inline-block px-4 py-2 glass rounded-full text-xs sm:text-sm font-medium text-accent mb-4 animate-slide-down hover:scale-105 transition-transform">
-            Our Expertise
+            Our Services
           </span>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 text-balance animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Services That <span className="bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text animate-pulse-slow">Transform</span> Your Vision

@@ -66,7 +66,7 @@ export function WorkProcess() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-accent mb-4">
-            Our Process
+            Our Working Process
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-balance">
             How We <span className="bg-linear-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">Work</span>
